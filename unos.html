@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <title>Unos artikla</title>
+        <meta charset="UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" href="img/stern_logo.png" type="image/gif" sizes="16x16">
+    </head>
+    <body>
+        <header>
+            <img id="logo" src="img/stern_logo.png" alt="logo">
+            <h1>stern</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="kategorija.php?id=kultura">Kultura</a></li>
+                    <li><a href="kategorija.php?id=sport">Sport</a></li>
+                    <li class="crveni"><a href="unos.html">Unos artikla</a></li>
+                    <li><a href="prijava.php">Prijava</a></li>
+                    <li><a href="registracija.php">Registracija</a></li>
+                    <li><a href="odjava.php">Odjava</a></li>
+                    <li id="desni"><a href="administracija.php">Administracija</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form enctype="multipart/form-data" action="skripta.php" method="post">
+                <label for="naslovArtikla">Naslov artikla(do 30 znakova):</label><br>
+                <input type="text" id="naslovArtikla" name="naslovArtikla"><br>
+                <span id="naslovPoruka"></span><br>
+
+                <label for="podnaslovArtikla">Podaslov artikla (do 30 znakova):</label><br>
+                <input type="text" id="podnaslovArtikla" name="podnaslovArtikla"><br>
+                <span id="podNaslovPoruka"></span><br>
+
+                <label for="sazetakVijesti">Kratki sažetak artikla(do 100 znakova):</label><br>
+                <textarea name="sazetakVijesti" id="sazetakVijesti" cols="70" rows="10"></textarea><br>
+                <span id="sazetakVijestiPoruka"></span><br>
+
+                <label for="sadrzajArtikla">Sadržaj vijesti:</label><br>
+                <textarea name="sadrzajArtikla" id="sadrzajArtikla" cols="70" rows="10"></textarea><br>
+                <span id="sadrzajArtiklaPoruka"></span><br>
+
+                <label for="kategorijaVijesti">Kategorija vijesti(obavezno):</label><br>
+                <select name="kategorijaVijesti" id="kategorijaVijesti">
+                    <option value="kultura">Kultura</option>
+                    <option value="sport">Sport</option>
+                </select>
+                <span id="kategorijaVijestiPoruka"></span><br>
+
+                <label for="arhiva">Prikaz vijesti:</label><br>
+                <input type="checkbox" id="arhiva" name="arhiva" value="prikaz"><br>
+
+                <label for="slikaArtikla">Slika artikla:</label><br>
+                <input type="file" id="slikaArtikla" name="slikaArtikla" accept="image/*"><br>
+                <span id="slikaArtiklaPoruka"></span>
+                <input class="button" type="submit" name="submit" value="Submit" id="submit"><br>
+            </form>
+        </main>
+        <script type="text/javascript">
+            document.getElementById("submit").onclick = function(event) {
+                var uvjet = true;
+                var naslovPolje = document.getElementById("naslovArtikla");
+                var podNaslovPolje = document.getElementById("podnaslovArtikla");
+                var sazetakVijestiPolje = document.getElementById("sazetakVijesti");
+                var tekstPolje = document.getElementById("sadrzajArtikla");
+                var slikaPolje = document.getElementById("slikaArtikla");
+                var kategorijaPolje = document.getElementById("kategorijaVijesti");
+
+                if (naslovPolje.value.length < 5 || naslovPolje.value.length > 30) {
+                    naslovPolje.style.border = "dashed red 1px";
+                    document.getElementById("naslovPoruka").innerHTML = "Naslov mora imati 5 do 30 znakova";
+                    uvjet = false;
+                }
+                if (podNaslovPolje.value.length < 5 || podNaslovPolje.value.length > 30) {
+                    podNaslovPolje.style.border = "dashed red 1px";
+                    document.getElementById("podNaslovPoruka").innerHTML = "Podnaslov mora imati 5 do 30 znakova";
+                    uvjet = false;
+                }
+                if (sazetakVijestiPolje.value.length < 10 || sazetakVijestiPolje.value.length > 100) {
+                    sazetakVijestiPolje.style.border = "dashed red 1px";
+                    document.getElementById("sazetakVijestiPoruka").innerHTML = "Kratki sadrzaj mora imati 10 do 100 znakova";
+                    uvjet = false;
+                }
+                if (tekstPolje.value.length == 0) {
+                    tekstPolje.style.border = "dashed red 1px";
+                    document.getElementById("sadrzajArtiklaPoruka").innerHTML = "Tekst ne smije biti prazan";
+                    uvjet = false;
+                }
+                if (slikaPolje.value.length == 0) {
+                    slikaPolje.style.border = "dashed red 1px";
+                    document.getElementById("slikaArtiklaPoruka").innerHTML = "Kategorija mora biti odabrana";
+                    uvjet = false;
+                }
+                if (kategorijaPolje.value.length == 0) {
+                    kategorijaPolje.style.border = "dashed red 1px";
+                    document.getElementById("kategorijaVijestiPoruka").innerHTML = "Kategorija mora biti odabrana";
+                    uvjet = false;
+                }
+
+                if(!uvjet){
+                    event.preventDefault();
+                }
+            }
+        </script>
+        <footer class="milanArtikl">
+            <p> Marko Zaninović | mzaninovi@tvz.hr | 2021.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,278 @@
+*{
+    font-family: 'Anton';
+    margin: 0;
+    padding: 0;
+}
+body{
+    float: left;
+    margin-left: 20%;
+    max-width: 60%;
+    height: 430px;
+}
+header{
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+header h1{
+    width: 70%;
+    font-style: italic;
+    position: relative;
+    margin: 5px 0 0 10px;
+    bottom: 15px;
+    font-size: 60px;
+}
+#logo{
+    height: 90%;
+}
+ul {
+    position: relative;
+    left: 80px;
+    bottom: 25px;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+li {
+    float: left;
+    padding-right: 20px;
+}
+#desni{
+    padding-right: 30px;
+}
+li a{
+    color: black;
+    width: 100%;
+    transition: .3s color;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+li a:hover{
+    color: red;
+}
+
+a{
+    color: black;
+    transition: .3s color;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+}
+
+section{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    height: 80%;
+}
+section h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    width: 100%;
+}
+section p{
+    font-family: Helvetica, sans-serif;
+    line-height: 23px;
+    color: #5a5858;
+}
+article{
+    height: 100%;
+    margin-right: 20px;
+    width: 30%;
+}
+
+article h3{
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    color: red;
+}
+article p{
+    color: black;
+    font-weight: 700;
+    font-family: Helvetica, sans-serif;
+}
+article a{
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: 0;
+    font-family: Helvetica, sans-serif;
+}
+.artiklLink a:hover, .artiklLink p:hover{
+    transition: color 0.2s;
+    color: red;
+}
+
+article img{
+    object-fit: cover;
+    width: 100%;
+    height: 180px;
+}
+
+main{
+    margin-bottom: 200px;
+}
+
+footer{
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+textarea{
+    padding: 2px;
+}
+section.milanArtikl{
+    position: relative;
+}
+.milanArtikl h1{
+    letter-spacing: 1px;
+    width: 100%;
+}
+.milanArtikl h4{
+    width: 90%;
+    font-family: Helvetica, sans-serif;
+    color: black;
+    line-height: 23px;
+}
+.milanArtikl img{
+    object-fit: cover;
+    width: 90%;
+    height: 50%;
+    margin: 20px 0 20px 20px;
+}
+.milanArtikl h3{
+    margin-left: auto;
+    margin-right: 100px;
+    font-size: 12px;
+    color: lightgray;
+    font-family: Helvetica, sans-serif;
+}
+.crveni a{
+    color: red;
+}
+#kategorijaArtikla{
+    font-size: 24px;
+    border-bottom: 2px red solid;
+    width: 5%;
+}
+.button{
+    display: block;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+}
+.button:hover{
+    transition: background-color 0.2s;
+    background-color: darkred;
+}
+option, label, input, select{
+    font-family: Helvetica, sans-serif;
+}
+input{
+    margin-bottom: 10px;
+}
+#admin form, input, textarea, button{
+    font-family: Helvetica, sans-serif;
+}
+.button_admin{
+    display: block;
+    float: left;
+    margin-right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+}
+.button_admin:hover{
+    transition: background-color 0.2s;
+    background-color: darkred;
+}
+
+hr{
+    background-color: red;
+    width: 50%;
+    border: 1px red solid;
+}
+
+span{
+    color: red;
+}
+
+@media screen and (min-width: 811px) and (max-width: 1300px){
+    html, body{
+        margin-left: 40px;
+        max-width: 100%;
+        height: 500px;
+    }
+    ul{
+        left: 90px;
+    }
+}
+
+@media screen and (max-width: 810px){
+    html, body{
+        float: left;
+        margin-left: 10px;
+        height: 1800px;
+        max-width: 92%;
+    }
+    header{
+        display: inline-flex;
+        flex-wrap: wrap;
+        height: 20%;
+        margin-bottom: 130px;
+    }
+    header h1{
+        font-style: italic;
+        margin: 0;
+        margin-left: 10px;
+        font-size: 120px;
+    }
+    #logo{
+        height: 50%;
+    }
+    nav{
+        position: relative;
+        right: 95px;
+        margin: 0;
+        width: 97%;
+    }
+    li {
+        float: none;
+        padding-right: 30px;
+    }
+    section{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        height: 70%;
+        margin-top: 10px;
+    }
+    article{
+        width: 100%;
+    }
+    article img{
+        height: 57%;
+        width: 100%;
+    }
+    main{
+        margin-top: 30px;
+    }
+}
