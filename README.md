@@ -1,4 +1,3 @@
 # PHP_news_page
-Projekt Stern za Programiranje Web Aplikacija
-Zavrsni projekt iz kolegija Programiranje Web Aplikacija.
-Projekt je izradjen koristeci jezik PHP, HTML i CSS. Baza podataka je izradjena preko XAMPP MariaDB DBMS-a.
+Final project for a web app programming course.
+The website is made to look like the german news forum 'Stern'. It's made mostly in PHP with javascript validation, and the website has its own database through XAMPP.
